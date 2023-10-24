@@ -39,6 +39,10 @@
             this.TbValorTotalVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PnVenda = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TbNomeProduto
@@ -121,9 +125,40 @@
             // 
             this.PnVenda.Location = new System.Drawing.Point(12, 217);
             this.PnVenda.Name = "PnVenda";
-            this.PnVenda.Size = new System.Drawing.Size(776, 221);
+            this.PnVenda.Size = new System.Drawing.Size(776, 179);
             this.PnVenda.TabIndex = 9;
             this.PnVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.PnVenda_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 425);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 25);
+            this.panel1.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(654, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "by Fernando Costa Colares";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "V 1.0 - 2023";
             // 
             // TelaVenda
             // 
@@ -131,6 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnVenda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TbValorTotalVenda);
@@ -146,6 +182,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venda";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +201,8 @@
         private System.Windows.Forms.TextBox TbValorTotalVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel PnVenda;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
