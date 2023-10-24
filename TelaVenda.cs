@@ -16,5 +16,25 @@ namespace ProjetoIntegradorFarmacia
         {
             InitializeComponent();
         }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtVender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PnVenda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
