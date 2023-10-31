@@ -16,5 +16,40 @@ namespace ProjetoIntegradorFarmacia
         {
             InitializeComponent();
         }
+
+        private void TbNomeProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbValorProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbQuantidadeVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtComprar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LbxFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbValorTotalVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PnVenda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

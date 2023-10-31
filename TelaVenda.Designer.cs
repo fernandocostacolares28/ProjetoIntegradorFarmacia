@@ -42,6 +42,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.LbxCliente = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +53,11 @@
             this.TbNomeProduto.Name = "TbNomeProduto";
             this.TbNomeProduto.Size = new System.Drawing.Size(179, 20);
             this.TbNomeProduto.TabIndex = 0;
+            this.TbNomeProduto.TextChanged += new System.EventHandler(this.TbNomeProduto_TextChanged);
             // 
             // TbValorProduto
             // 
-            this.TbValorProduto.Location = new System.Drawing.Point(145, 78);
+            this.TbValorProduto.Location = new System.Drawing.Point(145, 74);
             this.TbValorProduto.Name = "TbValorProduto";
             this.TbValorProduto.Size = new System.Drawing.Size(179, 20);
             this.TbValorProduto.TabIndex = 1;
@@ -111,6 +114,7 @@
             this.TbValorTotalVenda.Name = "TbValorTotalVenda";
             this.TbValorTotalVenda.Size = new System.Drawing.Size(166, 20);
             this.TbValorTotalVenda.TabIndex = 7;
+            this.TbValorTotalVenda.TextChanged += new System.EventHandler(this.TbValorTotalVenda_TextChanged);
             // 
             // label4
             // 
@@ -160,12 +164,32 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "V 1.0 - 2023";
             // 
+            // LbxCliente
+            // 
+            this.LbxCliente.FormattingEnabled = true;
+            this.LbxCliente.Location = new System.Drawing.Point(551, 52);
+            this.LbxCliente.Name = "LbxCliente";
+            this.LbxCliente.Size = new System.Drawing.Size(166, 17);
+            this.LbxCliente.TabIndex = 11;
+            this.LbxCliente.SelectedIndexChanged += new System.EventHandler(this.LbxCliente_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(487, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Cliente";
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.LbxCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnVenda);
             this.Controls.Add(this.label4);
@@ -204,5 +228,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox LbxCliente;
+        private System.Windows.Forms.Label label7;
     }
 }

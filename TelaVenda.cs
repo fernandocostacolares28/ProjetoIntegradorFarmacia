@@ -36,5 +36,20 @@ namespace ProjetoIntegradorFarmacia
         {
 
         }
+
+        private void LbxCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbValorTotalVenda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbNomeProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.PnEstoque = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,12 +67,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "V 1.0 - 2023";
             // 
+            // PnEstoque
+            // 
+            this.PnEstoque.Location = new System.Drawing.Point(6, 13);
+            this.PnEstoque.Name = "PnEstoque";
+            this.PnEstoque.Size = new System.Drawing.Size(782, 396);
+            this.PnEstoque.TabIndex = 3;
+            // 
             // TelaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PnEstoque);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaEstoque";
@@ -89,5 +98,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel PnEstoque;
     }
 }

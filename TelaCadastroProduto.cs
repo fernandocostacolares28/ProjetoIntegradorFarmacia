@@ -16,5 +16,30 @@ namespace ProjetoIntegradorFarmacia
         {
             InitializeComponent();
         }
+
+        private void TbIdProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbNomeProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbPrecoProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbQtdProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtSalvarProduto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
