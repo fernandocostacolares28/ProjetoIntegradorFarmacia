@@ -68,66 +68,66 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoBancoDeDados.cs" />
-    <Compile Include="TelaCadastroCliente.cs">
+    <Compile Include="Telas\TelaCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCadastroCliente.Designer.cs">
+    <Compile Include="Telas\TelaCadastroCliente.Designer.cs">
       <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaCadastroFornecedor.cs">
+    <Compile Include="Telas\TelaCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCadastroFornecedor.Designer.cs">
+    <Compile Include="Telas\TelaCadastroFornecedor.Designer.cs">
       <DependentUpon>TelaCadastroFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaCadastroProduto.cs">
+    <Compile Include="Telas\TelaCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCadastroProduto.Designer.cs">
+    <Compile Include="Telas\TelaCadastroProduto.Designer.cs">
       <DependentUpon>TelaCadastroProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaCompra.cs">
+    <Compile Include="Telas\TelaCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCompra.Designer.cs">
+    <Compile Include="Telas\TelaCompra.Designer.cs">
       <DependentUpon>TelaCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaEstoque.cs">
+    <Compile Include="Telas\TelaEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaEstoque.Designer.cs">
+    <Compile Include="Telas\TelaEstoque.Designer.cs">
       <DependentUpon>TelaEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaInicial.cs">
+    <Compile Include="Telas\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaInicial.Designer.cs">
+    <Compile Include="Telas\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TelaVenda.cs">
+    <Compile Include="Telas\TelaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaVenda.Designer.cs">
+    <Compile Include="Telas\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TelaCadastroCliente.resx">
+    <EmbeddedResource Include="Telas\TelaCadastroCliente.resx">
       <DependentUpon>TelaCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCadastroFornecedor.resx">
+    <EmbeddedResource Include="Telas\TelaCadastroFornecedor.resx">
       <DependentUpon>TelaCadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCadastroProduto.resx">
+    <EmbeddedResource Include="Telas\TelaCadastroProduto.resx">
       <DependentUpon>TelaCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCompra.resx">
+    <EmbeddedResource Include="Telas\TelaCompra.resx">
       <DependentUpon>TelaCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaEstoque.resx">
+    <EmbeddedResource Include="Telas\TelaEstoque.resx">
       <DependentUpon>TelaEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaInicial.resx">
+    <EmbeddedResource Include="Telas\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -139,7 +139,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TelaVenda.resx">
+    <EmbeddedResource Include="Telas\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
