@@ -41,6 +41,7 @@
             this.TbQtdProduto = new System.Windows.Forms.TextBox();
             this.TbPrecoProduto = new System.Windows.Forms.TextBox();
             this.BtSalvarProduto = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,12 +154,20 @@
             this.BtSalvarProduto.UseVisualStyleBackColor = true;
             this.BtSalvarProduto.Click += new System.EventHandler(this.BtSalvarProduto_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 183);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(776, 236);
+            this.panel2.TabIndex = 12;
+            // 
             // TelaCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtSalvarProduto);
             this.Controls.Add(this.TbPrecoProduto);
             this.Controls.Add(this.TbQtdProduto);
@@ -195,5 +204,6 @@
         private System.Windows.Forms.TextBox TbQtdProduto;
         private System.Windows.Forms.TextBox TbPrecoProduto;
         private System.Windows.Forms.Button BtSalvarProduto;
+        private System.Windows.Forms.Panel panel2;
     }
 }

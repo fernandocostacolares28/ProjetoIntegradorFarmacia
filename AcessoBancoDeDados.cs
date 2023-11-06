@@ -14,7 +14,7 @@ namespace ProjetoIntegradorFarmacia
 
         private static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source = C:\\Git\\ProjetoIntegradorFarmacia\\banco\\banco_farmacia.db\");
+            conexao = new SQLiteConnection("Data Source = C:\\Git\\ProjetoIntegradorFarmacia\\banco\\banco_farmacia.db");
             conexao.Open();
             return conexao;
         }
