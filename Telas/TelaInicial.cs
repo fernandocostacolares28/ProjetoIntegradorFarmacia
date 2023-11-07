@@ -16,6 +16,8 @@ namespace ProjetoIntegradorFarmacia
         public TelaInicial()
         {
             InitializeComponent();
+            TelaLogin telaLogin = new TelaLogin(this);
+            telaLogin.ShowDialog();
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -65,6 +67,16 @@ namespace ProjetoIntegradorFarmacia
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void TelaInicial_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
