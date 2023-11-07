@@ -34,14 +34,15 @@ namespace ProjetoIntegradorFarmacia
                 da.Fill(dt);
                 vcon.Close();
                 return dt;
-                
-            }catch (Exception ex) 
+
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
 
-        public static DataTable Consulta(string sql) 
+        public static DataTable Consulta(string sql)
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
@@ -51,10 +52,10 @@ namespace ProjetoIntegradorFarmacia
                 var cmd = vcon.CreateCommand();
                 cmd.CommandText = sql;
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-                da.Fill(dt) ;
+                da.Fill(dt);
                 vcon.Close();
                 return dt;
-                
+
             }
             catch (Exception ex)
             {
@@ -63,7 +64,7 @@ namespace ProjetoIntegradorFarmacia
             }
         }
         //////Funções novo Usuário
-        
+
         public static void NovoUsuario(EntidadeUsuario u)
         {
             if (verificaUserName(u))
@@ -81,7 +82,8 @@ namespace ProjetoIntegradorFarmacia
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Novo Usuário Cadastrado!!");
                 vcon.Close();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar novo usuário");
                 throw ex;
@@ -121,7 +123,7 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT * FROM tb_user WHERE id_user ="+id;
+                cmd.CommandText = "SELECT * FROM tb_user WHERE id_user =" + id;
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 vcon.Close();
@@ -142,7 +144,7 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_user SET password_user = '"+u.password_user+"' WHERE id_user = "+u.id_user;
+                cmd.CommandText = "UPDATE tb_user SET password_user = '" + u.password_user + "' WHERE id_user = " + u.id_user;
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
                 vcon.Close();
@@ -162,7 +164,7 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "DELETE FROM tb_user WHERE id_user ="+u.id_user+"";
+                cmd.CommandText = "DELETE FROM tb_user WHERE id_user =" + u.id_user + "";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 cmd.ExecuteNonQuery();
                 vcon.Close();
@@ -184,10 +186,10 @@ namespace ProjetoIntegradorFarmacia
 
             var vcon = ConexaoBanco();
             var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT name_user FROM tb_user WHERE'"+u.name_user+"'";
+            cmd.CommandText = "SELECT name_user FROM tb_user WHERE'" + u.name_user + "'";
             da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-            da.Fill(dt) ;
-            if(dt.Rows.Count > 0)
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
             {
                 res = true;
                 return res;
