@@ -43,7 +43,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,20 +171,12 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "V 1.0 - 2023";
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(12, 201);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 218);
-            this.panel2.TabIndex = 23;
-            // 
             // TelaCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtSalvarFornecedor);
             this.Controls.Add(this.label5);
@@ -226,6 +217,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel2;
     }
 }

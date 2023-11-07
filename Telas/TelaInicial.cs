@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoIntegradorFarmacia.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,7 +79,14 @@ namespace ProjetoIntegradorFarmacia
 
         private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            TelaCadastroUsuario telaCadastroUsuario = new TelaCadastroUsuario();
+            telaCadastroUsuario.ShowDialog();
+        }
 
+        private void EditarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEditarUsuario telaEditarUsuario = new TelaEditarUsuario();
+            telaEditarUsuario.ShowDialog();
         }
     }
 }

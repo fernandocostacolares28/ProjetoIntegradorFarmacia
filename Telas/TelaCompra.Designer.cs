@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.LbxFornecedor = new System.Windows.Forms.ListBox();
-            this.PnVenda = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TbValorTotalVenda = new System.Windows.Forms.TextBox();
             this.BtComprar = new System.Windows.Forms.Button();
@@ -95,14 +94,6 @@
             this.LbxFornecedor.Size = new System.Drawing.Size(166, 17);
             this.LbxFornecedor.TabIndex = 23;
             this.LbxFornecedor.SelectedIndexChanged += new System.EventHandler(this.LbxFornecedor_SelectedIndexChanged);
-            // 
-            // PnVenda
-            // 
-            this.PnVenda.Location = new System.Drawing.Point(12, 226);
-            this.PnVenda.Name = "PnVenda";
-            this.PnVenda.Size = new System.Drawing.Size(776, 179);
-            this.PnVenda.TabIndex = 22;
-            this.PnVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.PnVenda_Paint);
             // 
             // label4
             // 
@@ -190,7 +181,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LbxFornecedor);
-            this.Controls.Add(this.PnVenda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TbValorTotalVenda);
             this.Controls.Add(this.BtComprar);
@@ -220,7 +210,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox LbxFornecedor;
-        private System.Windows.Forms.Panel PnVenda;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TbValorTotalVenda;
         private System.Windows.Forms.Button BtComprar;

@@ -67,8 +67,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcessoBancoDeDados.cs" />
-    <Compile Include="Globais.cs" />
+    <Compile Include="Entidade\AcessoBancoDeDados.cs" />
+    <Compile Include="Entidade\Globais.cs" />
+    <Compile Include="Entidade\EntidadeUsuario.cs" />
+    <Compile Include="Telas\TelaCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaCadastroUsuario.Designer.cs">
+      <DependentUpon>TelaCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaEditarUsuario.Designer.cs">
+      <DependentUpon>TelaEditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +132,12 @@
     <Compile Include="Telas\TelaVenda.Designer.cs">
       <DependentUpon>TelaVenda.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\TelaCadastroUsuario.resx">
+      <DependentUpon>TelaCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaEditarUsuario.resx">
+      <DependentUpon>TelaEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>

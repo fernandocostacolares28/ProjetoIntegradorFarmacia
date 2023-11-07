@@ -40,7 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BtSalvarCliente = new System.Windows.Forms.Button();
-            this.PnCliente = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -140,14 +139,6 @@
             this.BtSalvarCliente.Text = "Salvar";
             this.BtSalvarCliente.UseVisualStyleBackColor = true;
             // 
-            // PnCliente
-            // 
-            this.PnCliente.Location = new System.Drawing.Point(12, 174);
-            this.PnCliente.Name = "PnCliente";
-            this.PnCliente.Size = new System.Drawing.Size(776, 251);
-            this.PnCliente.TabIndex = 11;
-            this.PnCliente.Paint += new System.Windows.Forms.PaintEventHandler(this.PnCliente_Paint);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
@@ -186,7 +177,6 @@
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.PnCliente);
             this.Controls.Add(this.BtSalvarCliente);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -223,7 +213,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtSalvarCliente;
-        private System.Windows.Forms.Panel PnCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
