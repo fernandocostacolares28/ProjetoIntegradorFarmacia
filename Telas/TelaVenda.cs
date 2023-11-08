@@ -39,13 +39,15 @@ namespace ProjetoIntegradorFarmacia
             Int64 qtd = Convert.ToInt64(TbQuantidadeVenda.Text);
             string prd = CbProduto.Text;
             EntidadeVenda venda = new EntidadeVenda();
-            venda.id_cliente = CbCliente.Text;
+            venda.nomecli = CbCliente.Text;
             venda.valor_venda = Convert.ToDouble(TbValorTotalVenda.Text);
             venda.name_produtovenda = CbProduto.Text;
-            venda.quantidade_produto = Convert.ToInt64(TbQuantidadeVenda);
+            venda.quantidade_produto = Convert.ToInt64(TbQuantidadeVenda.Text);
             venda.systemData = DateTime.Now;
             AcessoBancoDeDados.NovaVenda(venda);
             AcessoBancoDeDados.AtualizarQuantidadeProduto(qtd, prd);
+            DgvVenda.DataSource = AcessoBancoDeDados.ObterVendaId();
+
 
         }
 
@@ -73,10 +75,10 @@ namespace ProjetoIntegradorFarmacia
         {
             DgvVenda.DataSource = AcessoBancoDeDados.ObterVendaId();
             DgvVenda.Columns[0].Width = 100;
-            DgvVenda.Columns[1].Width = 100;
             DgvVenda.Columns[2].Width = 100;
             DgvVenda.Columns[3].Width = 100;
             DgvVenda.Columns[4].Width = 100;
+            DgvVenda.Columns[5].Width = 100;
         }
 
 
@@ -103,7 +105,15 @@ namespace ProjetoIntegradorFarmacia
 
         private void TbQuantidadeVenda_TextChanged(object sender, EventArgs e)
         {
-            TbValorTotalVenda.Text = Convert.ToString(Convert.ToDouble(TbValorProduto.Text) * Convert.ToDouble(TbQuantidadeVenda.Text));
+            if(TbQuantidadeVenda.Text == "")
+            {
+
+            }
+            else 
+            { 
+                TbValorTotalVenda.Text = Convert.ToString(Convert.ToDouble(TbValorProduto.Text) * Convert.ToDouble(TbQuantidadeVenda.Text));
+            }
+            
         }
 
 

@@ -677,8 +677,8 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "INSERT INTO tb_venda (id_cliente, name_produtovenda, valor_venda, quantidade_produto, systemdata) VALUES((SELECT id_cliente FROM tb_cliente where = '@id_cliente'), @name_produtovenda, @valor_venda, @quantidade_produto, @systemdata)";
-                cmd.Parameters.AddWithValue("@id_cliente", v.id_cliente);
+                cmd.CommandText = "INSERT INTO tb_venda (nomecli, name_produtovenda, valor_venda, quantidade_produto, systemdata) VALUES(@nomecli, @name_produtovenda, @valor_venda, @quantidade_produto, @systemdata)";
+                cmd.Parameters.AddWithValue("@nomecli", v.nomecli);
                 cmd.Parameters.AddWithValue("@name_produtovenda", v.name_produtovenda);
                 cmd.Parameters.AddWithValue("@valor_venda", v.valor_venda);
                 cmd.Parameters.AddWithValue("@quantidade_produto", v.quantidade_produto);
@@ -724,7 +724,7 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT id_venda as ID, id_cliente as Cliente, name_produtovenda as Produto, valor_venda as Valor, quantidade_produto as Quantidade, systemdata as Data FROM tb_venda";
+                cmd.CommandText = "SELECT id_venda as ID, nomecli as Cliente, name_produtovenda as Produto, valor_venda as Valor, quantidade_produto as Quantidade, systemdata as Data FROM tb_venda";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 vcon.Close();
