@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Entidade\AcessoBancoDeDados.cs" />
     <Compile Include="Entidade\EntidadeCliente.cs" />
+    <Compile Include="Entidade\EntidadeFornecedor.cs" />
     <Compile Include="Entidade\Globais.cs" />
     <Compile Include="Entidade\EntidadeUsuario.cs" />
     <Compile Include="Telas\TelaCadastroUsuario.cs">
@@ -82,6 +83,12 @@
     </Compile>
     <Compile Include="Telas\TelaEditarCliente.Designer.cs">
       <DependentUpon>TelaEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaEditarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaEditarFornecedor.Designer.cs">
+      <DependentUpon>TelaEditarFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\TelaEditarUsuario.cs">
       <SubType>Form</SubType>
@@ -144,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaEditarCliente.resx">
       <DependentUpon>TelaEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaEditarFornecedor.resx">
+      <DependentUpon>TelaEditarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaEditarUsuario.resx">
       <DependentUpon>TelaEditarUsuario.cs</DependentUpon>

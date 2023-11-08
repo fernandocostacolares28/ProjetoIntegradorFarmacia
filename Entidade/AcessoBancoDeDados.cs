@@ -314,6 +314,142 @@ namespace ProjetoIntegradorFarmacia
         }
 
         // fim funções Cliente
+
+        // Funções Fornecedor
+
+        public static void NovoFornecedor(EntidadeFornecedor forn)
+        {
+            if (verificaCnpjFornecedor(forn))
+            {
+                MessageBox.Show("Fornecedor já existe");
+                return;
+            }
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_fornecedor (name_fornecedor, cnpj_fornecedor, telefone_fornecedor, endereco_fornecedor) VALUES(@name_fornecedor, @cnpj_fornecedor, @telefone_fornecedor, @endereco_fornecedor)";
+                cmd.Parameters.AddWithValue("@name_fornecedor", forn.name_fornecedor);
+                cmd.Parameters.AddWithValue("@cnpj_fornecedor", forn.cnpj_fornecedor);
+                cmd.Parameters.AddWithValue("@telefone_fornecedor", forn.telefone_fornecedor);
+                cmd.Parameters.AddWithValue("@endereco_fornecedor", forn.endereco_fornecedor);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Novo Fornecedor Cadastrado!!");
+                vcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar novo Fornecedor");
+                throw ex;
+            }
+        }
+
+        public static bool verificaCnpjFornecedor(EntidadeFornecedor forn)
+        {
+            bool res;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConexaoBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT cnpj_fornecedor FROM tb_fornecedor WHERE cnpj_fornecedor = '" + forn.cnpj_fornecedor + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                res = true;
+                return res;
+            }
+            else
+            {
+                res = false;
+            }
+            vcon.Close();
+            return res;
+        }
+
+        public static void AtualizarFornecedorId(EntidadeFornecedor forn)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_fornecedor SET name_fornecedor = '" + forn.name_fornecedor + "', telefone_fornecedor = '" + forn.telefone_fornecedor + "' , endereco_fornecedor = '" + forn.endereco_fornecedor + "' WHERE id_fornecedor = " + forn.id_fornecedor;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void ExcluirFornecedorId(EntidadeFornecedor forn)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_fornecedor WHERE id_fornecedor =" + forn.id_fornecedor + "";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterFornecedorId()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_fornecedor as ID, name_fornecedor as Empresa, cnpj_fornecedor as CNPJ, telefone_fornecedor as Telefone, endereco_fornecedor as Endereço FROM tb_fornecedor";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static DataTable ObterDadosFornecedorId(String id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_fornecedor WHERE id_fornecedor =" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Fim Funções Fornecedor
         public static bool verificaUserName(EntidadeUsuario u)
         {
             bool res;
@@ -337,5 +473,6 @@ namespace ProjetoIntegradorFarmacia
             vcon.Close();
             return res;
         }
+        
     }
 }

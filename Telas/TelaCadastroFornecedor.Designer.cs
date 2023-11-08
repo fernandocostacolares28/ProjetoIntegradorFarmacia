@@ -54,6 +54,7 @@
             this.BtSalvarFornecedor.TabIndex = 21;
             this.BtSalvarFornecedor.Text = "Salvar";
             this.BtSalvarFornecedor.UseVisualStyleBackColor = true;
+            this.BtSalvarFornecedor.Click += new System.EventHandler(this.BtSalvarFornecedor_Click);
             // 
             // label5
             // 

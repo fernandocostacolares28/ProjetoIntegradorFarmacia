@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoIntegradorFarmacia.Entidade;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,20 @@ namespace ProjetoIntegradorFarmacia
         private void TelaCadastroFornecedor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtSalvarFornecedor_Click(object sender, EventArgs e)
+        {
+            EntidadeFornecedor fornecedor = new EntidadeFornecedor();
+            fornecedor.name_fornecedor = TbNomeFornecedor.Text;
+            fornecedor.cnpj_fornecedor = Convert.ToInt64(TbCNPJ.Text);
+            fornecedor.telefone_fornecedor = Convert.ToInt64(TbTelefoneFornecedor.Text);
+            fornecedor.endereco_fornecedor = TbEnderecoFornecedor.Text;
+            AcessoBancoDeDados.NovoFornecedor(fornecedor);
+            TbNomeFornecedor.Clear();
+            TbCNPJ.Clear();
+            TbTelefoneFornecedor.Clear();
+            TbEnderecoFornecedor.Clear();
         }
     }
 }

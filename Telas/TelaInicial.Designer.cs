@@ -37,6 +37,7 @@
             this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.compraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -129,8 +130,17 @@
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.ClienteToolStripMenuItem_Click);
             // 
+            // editarClienteToolStripMenuItem
+            // 
+            this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
+            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
+            this.editarClienteToolStripMenuItem.Click += new System.EventHandler(this.editarClienteToolStripMenuItem_Click);
+            // 
             // fornecedorToolStripMenuItem
             // 
+            this.fornecedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarFornecedorToolStripMenuItem});
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
             this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
@@ -225,12 +235,12 @@
             this.compraToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.compraToolStripMenuItem1.Text = "Compra";
             // 
-            // editarClienteToolStripMenuItem
+            // editarFornecedorToolStripMenuItem
             // 
-            this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
-            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
-            this.editarClienteToolStripMenuItem.Click += new System.EventHandler(this.editarClienteToolStripMenuItem_Click);
+            this.editarFornecedorToolStripMenuItem.Name = "editarFornecedorToolStripMenuItem";
+            this.editarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarFornecedorToolStripMenuItem.Text = "Editar Fornecedor";
+            this.editarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.editarFornecedorToolStripMenuItem_Click);
             // 
             // TelaInicial
             // 
@@ -281,6 +291,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarUsuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarFornecedorToolStripMenuItem;
     }
 }
 

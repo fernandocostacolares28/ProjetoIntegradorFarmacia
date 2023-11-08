@@ -94,5 +94,11 @@ namespace ProjetoIntegradorFarmacia
             TelaEditarCliente telaEditarCliente = new TelaEditarCliente();
             telaEditarCliente.ShowDialog();
         }
+
+        private void editarFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEditarFornecedor telaEditarFornecedor = new TelaEditarFornecedor();
+            telaEditarFornecedor.ShowDialog();
+        }
     }
 }
