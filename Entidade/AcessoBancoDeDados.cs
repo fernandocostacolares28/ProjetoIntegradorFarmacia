@@ -623,12 +623,12 @@ namespace ProjetoIntegradorFarmacia
             {
                 using (var cmd = ConexaoBanco().CreateCommand())
                 {
-                    cmd.CommandText = "SELECT name_produto FROM tb_produto"; // Substitua pelo nome da coluna desejada e o nome da tabela
+                    cmd.CommandText = "SELECT name_produto FROM tb_produto"; 
                     using (SQLiteDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            // Adicione os itens do banco de dados ao ComboBox
+                            
                             comboBox.Items.Add(reader["name_produto"].ToString());
                         }
                     }
@@ -644,7 +644,100 @@ namespace ProjetoIntegradorFarmacia
             }
         }
 
-            //Fim Funções Venda
+        public static void PreencherComboBoxCliente(ComboBox comboBox)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT name_cliente FROM tb_cliente"; 
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            
+                            comboBox.Items.Add(reader["name_cliente"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao preencher o ComboBox: " + ex.Message);
+            }
+            finally
+            {
+                ConexaoBanco().Close();
+            }
+        }
+
+        public static void NovaVenda(EntidadeVenda v)
+        {
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_venda (id_cliente, name_produtovenda, valor_venda, quantidade_produto, systemdata) VALUES((SELECT id_cliente FROM tb_cliente where = '@id_cliente'), @name_produtovenda, @valor_venda, @quantidade_produto, @systemdata)";
+                cmd.Parameters.AddWithValue("@id_cliente", v.id_cliente);
+                cmd.Parameters.AddWithValue("@name_produtovenda", v.name_produtovenda);
+                cmd.Parameters.AddWithValue("@valor_venda", v.valor_venda);
+                cmd.Parameters.AddWithValue("@quantidade_produto", v.quantidade_produto);
+                cmd.Parameters.AddWithValue("@systemdata", v.systemData);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Nova Venda Realizada!!");
+                vcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao realizar a Venda!");
+                throw ex;
+            }
+        }
+
+        public static void AtualizarQuantidadeProduto(Int64 qtd, string pdt)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_produto SET quantidadeestoque_produto = quantidadeestoque_produto - @qtd WHERE name_produto = @pdt";
+                cmd.Parameters.AddWithValue("@qtd", qtd);
+                cmd.Parameters.AddWithValue("@pdt", pdt);
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterVendaId()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_venda as ID, id_cliente as Cliente, name_produtovenda as Produto, valor_venda as Valor, quantidade_produto as Quantidade, systemdata as Data FROM tb_venda";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Fim Funções Venda
         public static bool verificaUserName(EntidadeUsuario u)
         {
             bool res;

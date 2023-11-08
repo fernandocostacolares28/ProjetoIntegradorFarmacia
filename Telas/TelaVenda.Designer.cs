@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaVenda));
             this.TbValorProduto = new System.Windows.Forms.TextBox();
             this.TbQuantidadeVenda = new System.Windows.Forms.TextBox();
@@ -37,14 +38,15 @@
             this.btVender = new System.Windows.Forms.Button();
             this.TbValorTotalVenda = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PnVenda = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.CbProduto = new System.Windows.Forms.ComboBox();
             this.CbCliente = new System.Windows.Forms.ComboBox();
+            this.DgvVenda = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // TbValorProduto
@@ -60,6 +62,7 @@
             this.TbQuantidadeVenda.Name = "TbQuantidadeVenda";
             this.TbQuantidadeVenda.Size = new System.Drawing.Size(179, 20);
             this.TbQuantidadeVenda.TabIndex = 2;
+            this.TbQuantidadeVenda.TextChanged += new System.EventHandler(this.TbQuantidadeVenda_TextChanged);
             // 
             // label1
             // 
@@ -92,7 +95,7 @@
             // 
             // btVender
             // 
-            this.btVender.Location = new System.Drawing.Point(145, 188);
+            this.btVender.Location = new System.Drawing.Point(145, 146);
             this.btVender.Name = "btVender";
             this.btVender.Size = new System.Drawing.Size(75, 23);
             this.btVender.TabIndex = 6;
@@ -116,14 +119,6 @@
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Valor Total";
-            // 
-            // PnVenda
-            // 
-            this.PnVenda.Location = new System.Drawing.Point(12, 217);
-            this.PnVenda.Name = "PnVenda";
-            this.PnVenda.Size = new System.Drawing.Size(776, 179);
-            this.PnVenda.TabIndex = 9;
-            this.PnVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.PnVenda_Paint);
             // 
             // panel1
             // 
@@ -184,17 +179,40 @@
             this.CbCliente.TabIndex = 14;
             this.CbCliente.SelectedIndexChanged += new System.EventHandler(this.CbCliente_SelectedIndexChanged);
             // 
+            // DgvVenda
+            // 
+            this.DgvVenda.AllowUserToAddRows = false;
+            this.DgvVenda.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvVenda.Location = new System.Drawing.Point(12, 175);
+            this.DgvVenda.MultiSelect = false;
+            this.DgvVenda.Name = "DgvVenda";
+            this.DgvVenda.ReadOnly = true;
+            this.DgvVenda.RowHeadersVisible = false;
+            this.DgvVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvVenda.Size = new System.Drawing.Size(776, 244);
+            this.DgvVenda.TabIndex = 16;
+            this.DgvVenda.SelectionChanged += new System.EventHandler(this.DgvVenda_SelectionChanged);
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DgvVenda);
             this.Controls.Add(this.CbCliente);
             this.Controls.Add(this.CbProduto);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.PnVenda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TbValorTotalVenda);
             this.Controls.Add(this.btVender);
@@ -207,10 +225,11 @@
             this.Name = "TelaVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venda";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.TelaVenda_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvVenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,12 +244,12 @@
         private System.Windows.Forms.Button btVender;
         private System.Windows.Forms.TextBox TbValorTotalVenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel PnVenda;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CbProduto;
         private System.Windows.Forms.ComboBox CbCliente;
+        private System.Windows.Forms.DataGridView DgvVenda;
     }
 }
