@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaVenda));
-            this.TbNomeProduto = new System.Windows.Forms.TextBox();
             this.TbValorProduto = new System.Windows.Forms.TextBox();
             this.TbQuantidadeVenda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,18 +41,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.LbxCliente = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.CbProduto = new System.Windows.Forms.ComboBox();
+            this.CbCliente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TbNomeProduto
-            // 
-            this.TbNomeProduto.Location = new System.Drawing.Point(145, 36);
-            this.TbNomeProduto.Name = "TbNomeProduto";
-            this.TbNomeProduto.Size = new System.Drawing.Size(179, 20);
-            this.TbNomeProduto.TabIndex = 0;
-            this.TbNomeProduto.TextChanged += new System.EventHandler(this.TbNomeProduto_TextChanged);
             // 
             // TbValorProduto
             // 
@@ -100,7 +92,7 @@
             // 
             // btVender
             // 
-            this.btVender.Location = new System.Drawing.Point(145, 146);
+            this.btVender.Location = new System.Drawing.Point(145, 188);
             this.btVender.Name = "btVender";
             this.btVender.Size = new System.Drawing.Size(75, 23);
             this.btVender.TabIndex = 6;
@@ -110,7 +102,7 @@
             // 
             // TbValorTotalVenda
             // 
-            this.TbValorTotalVenda.Location = new System.Drawing.Point(551, 120);
+            this.TbValorTotalVenda.Location = new System.Drawing.Point(551, 97);
             this.TbValorTotalVenda.Name = "TbValorTotalVenda";
             this.TbValorTotalVenda.Size = new System.Drawing.Size(166, 20);
             this.TbValorTotalVenda.TabIndex = 7;
@@ -119,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(487, 123);
+            this.label4.Location = new System.Drawing.Point(487, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 8;
@@ -164,15 +156,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "V 1.0 - 2023";
             // 
-            // LbxCliente
-            // 
-            this.LbxCliente.FormattingEnabled = true;
-            this.LbxCliente.Location = new System.Drawing.Point(551, 52);
-            this.LbxCliente.Name = "LbxCliente";
-            this.LbxCliente.Size = new System.Drawing.Size(166, 17);
-            this.LbxCliente.TabIndex = 11;
-            this.LbxCliente.SelectedIndexChanged += new System.EventHandler(this.LbxCliente_SelectedIndexChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -182,14 +165,34 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Cliente";
             // 
+            // CbProduto
+            // 
+            this.CbProduto.FormattingEnabled = true;
+            this.CbProduto.Location = new System.Drawing.Point(145, 33);
+            this.CbProduto.Name = "CbProduto";
+            this.CbProduto.Size = new System.Drawing.Size(192, 21);
+            this.CbProduto.TabIndex = 13;
+            this.CbProduto.SelectedIndexChanged += new System.EventHandler(this.CbProduto_SelectedIndexChanged);
+            this.CbProduto.TextChanged += new System.EventHandler(this.CbProduto_TextChanged);
+            // 
+            // CbCliente
+            // 
+            this.CbCliente.FormattingEnabled = true;
+            this.CbCliente.Location = new System.Drawing.Point(551, 53);
+            this.CbCliente.Name = "CbCliente";
+            this.CbCliente.Size = new System.Drawing.Size(192, 21);
+            this.CbCliente.TabIndex = 14;
+            this.CbCliente.SelectedIndexChanged += new System.EventHandler(this.CbCliente_SelectedIndexChanged);
+            // 
             // TelaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CbCliente);
+            this.Controls.Add(this.CbProduto);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.LbxCliente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnVenda);
             this.Controls.Add(this.label4);
@@ -200,7 +203,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TbQuantidadeVenda);
             this.Controls.Add(this.TbValorProduto);
-            this.Controls.Add(this.TbNomeProduto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -215,8 +217,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TbNomeProduto;
         private System.Windows.Forms.TextBox TbValorProduto;
         private System.Windows.Forms.TextBox TbQuantidadeVenda;
         private System.Windows.Forms.Label label1;
@@ -229,7 +229,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox LbxCliente;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox CbProduto;
+        private System.Windows.Forms.ComboBox CbCliente;
     }
 }

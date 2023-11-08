@@ -1,4 +1,5 @@
 ﻿using ProjetoIntegradorFarmacia.Entidade;
+using ProjetoIntegradorFarmacia.Telas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,12 @@ namespace ProjetoIntegradorFarmacia
             TbCNPJ.Clear();
             TbTelefoneFornecedor.Clear();
             TbEnderecoFornecedor.Clear();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEditarFornecedor telaEditarFornecedor = new TelaEditarFornecedor();
+            telaEditarFornecedor.ShowDialog();
         }
     }
 }

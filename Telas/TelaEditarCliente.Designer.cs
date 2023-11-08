@@ -241,6 +241,7 @@
             this.Controls.Add(this.BtCancelar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaEditarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Cliente";
             this.Load += new System.EventHandler(this.TelaEditarCliente_Load);
             this.panel1.ResumeLayout(false);

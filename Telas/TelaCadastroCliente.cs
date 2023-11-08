@@ -75,5 +75,11 @@ namespace ProjetoIntegradorFarmacia
         {
 
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEditarCliente telaEditarCliente = new TelaEditarCliente();
+            telaEditarCliente.ShowDialog();
+        }
     }
 }

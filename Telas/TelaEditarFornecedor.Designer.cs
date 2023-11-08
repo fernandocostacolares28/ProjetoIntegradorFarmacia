@@ -240,6 +240,7 @@
             this.Controls.Add(this.TbIdFornecedor);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaEditarFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Fornecedor";
             this.Load += new System.EventHandler(this.TelaEditarFornecedor_Load);
             this.panel1.ResumeLayout(false);

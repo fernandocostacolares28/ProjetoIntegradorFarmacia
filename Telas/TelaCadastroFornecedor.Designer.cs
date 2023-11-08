@@ -43,12 +43,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtSalvarFornecedor
             // 
-            this.BtSalvarFornecedor.Location = new System.Drawing.Point(278, 127);
+            this.BtSalvarFornecedor.Location = new System.Drawing.Point(278, 146);
             this.BtSalvarFornecedor.Name = "BtSalvarFornecedor";
             this.BtSalvarFornecedor.Size = new System.Drawing.Size(75, 23);
             this.BtSalvarFornecedor.TabIndex = 21;
@@ -59,7 +62,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 137);
+            this.label5.Location = new System.Drawing.Point(18, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 20;
@@ -68,7 +71,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 111);
+            this.label4.Location = new System.Drawing.Point(18, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 19;
@@ -77,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 85);
+            this.label3.Location = new System.Drawing.Point(18, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 18;
@@ -85,7 +88,7 @@
             // 
             // TbEnderecoFornecedor
             // 
-            this.TbEnderecoFornecedor.Location = new System.Drawing.Point(75, 130);
+            this.TbEnderecoFornecedor.Location = new System.Drawing.Point(75, 149);
             this.TbEnderecoFornecedor.Name = "TbEnderecoFornecedor";
             this.TbEnderecoFornecedor.Size = new System.Drawing.Size(165, 20);
             this.TbEnderecoFornecedor.TabIndex = 17;
@@ -93,7 +96,7 @@
             // 
             // TbTelefoneFornecedor
             // 
-            this.TbTelefoneFornecedor.Location = new System.Drawing.Point(75, 104);
+            this.TbTelefoneFornecedor.Location = new System.Drawing.Point(75, 123);
             this.TbTelefoneFornecedor.Name = "TbTelefoneFornecedor";
             this.TbTelefoneFornecedor.Size = new System.Drawing.Size(165, 20);
             this.TbTelefoneFornecedor.TabIndex = 16;
@@ -101,7 +104,7 @@
             // 
             // TbCNPJ
             // 
-            this.TbCNPJ.Location = new System.Drawing.Point(75, 78);
+            this.TbCNPJ.Location = new System.Drawing.Point(75, 97);
             this.TbCNPJ.Name = "TbCNPJ";
             this.TbCNPJ.Size = new System.Drawing.Size(165, 20);
             this.TbCNPJ.TabIndex = 15;
@@ -109,7 +112,7 @@
             // 
             // TbNomeFornecedor
             // 
-            this.TbNomeFornecedor.Location = new System.Drawing.Point(75, 52);
+            this.TbNomeFornecedor.Location = new System.Drawing.Point(75, 71);
             this.TbNomeFornecedor.Name = "TbNomeFornecedor";
             this.TbNomeFornecedor.Size = new System.Drawing.Size(165, 20);
             this.TbNomeFornecedor.TabIndex = 14;
@@ -118,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 59);
+            this.label2.Location = new System.Drawing.Point(18, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 13;
@@ -127,7 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 33);
+            this.label1.Location = new System.Drawing.Point(18, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 12;
@@ -135,7 +138,7 @@
             // 
             // TbIdFornecedor
             // 
-            this.TbIdFornecedor.Location = new System.Drawing.Point(75, 26);
+            this.TbIdFornecedor.Location = new System.Drawing.Point(75, 45);
             this.TbIdFornecedor.Name = "TbIdFornecedor";
             this.TbIdFornecedor.ReadOnly = true;
             this.TbIdFornecedor.Size = new System.Drawing.Size(44, 20);
@@ -148,7 +151,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 167);
+            this.panel1.Location = new System.Drawing.Point(0, 193);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 25);
             this.panel1.TabIndex = 22;
@@ -173,12 +176,29 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "V 1.0 - 2023";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 23;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
             // TelaCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(800, 192);
+            this.ClientSize = new System.Drawing.Size(800, 218);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtSalvarFornecedor);
             this.Controls.Add(this.label5);
@@ -191,14 +211,17 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TbIdFornecedor);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaCadastroFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fornecedor";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaCadastroFornecedor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +243,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
     }
 }

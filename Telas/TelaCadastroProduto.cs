@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoIntegradorFarmacia.Entidade;
+using ProjetoIntegradorFarmacia.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +40,24 @@ namespace ProjetoIntegradorFarmacia
         }
 
         private void BtSalvarProduto_Click(object sender, EventArgs e)
+        {
+            EntidadeProduto produto = new EntidadeProduto();
+            produto.name_produto = TbNomeProduto.Text;
+            produto.valor_produto = Convert.ToDouble(TbPrecoProduto.Text);
+            produto.quantidadeestoque_produto = Convert.ToInt32(TbQtdProduto.Text);
+            AcessoBancoDeDados.NovoProduto(produto);
+            TbNomeProduto.Clear();
+            TbPrecoProduto.Clear();
+            TbQtdProduto.Clear();
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEstoque telaEstoque = new TelaEstoque();
+            telaEstoque.ShowDialog();
+        }
+
+        private void TelaCadastroProduto_Load(object sender, EventArgs e)
         {
 
         }

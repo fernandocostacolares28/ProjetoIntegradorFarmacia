@@ -450,6 +450,201 @@ namespace ProjetoIntegradorFarmacia
         }
 
         //Fim Funções Fornecedor
+
+        // Funções Produto
+
+        public static void NovoProduto(EntidadeProduto pro)
+        {
+            if (verificaProdutoName(pro))
+            {
+                MessageBox.Show("Produto já existe");
+                return;
+            }
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_produto (name_produto, valor_produto, quantidadeestoque_produto) VALUES(@name_produto, @valor_produto, @quantidadeestoque_produto)";
+                cmd.Parameters.AddWithValue("@name_produto", pro.name_produto);
+                cmd.Parameters.AddWithValue("@valor_produto", pro.valor_produto);
+                cmd.Parameters.AddWithValue("@quantidadeestoque_produto", pro.quantidadeestoque_produto);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Novo Produto Cadastrado!!");
+                vcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar novo produto");
+                throw ex;
+            }
+        }
+
+        public static bool verificaProdutoName(EntidadeProduto pro)
+        {
+            bool res;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConexaoBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT name_produto FROM tb_produto WHERE name_produto = '" + pro.name_produto + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                res = true;
+                return res;
+            }
+            else
+            {
+                res = false;
+            }
+            vcon.Close();
+            return res;
+        }
+
+        public static DataTable ObterProdutoId()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_produto as ID, name_produto as Usuario, valor_produto as Valor, quantidadeestoque_produto as Quantidade FROM tb_produto";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void AtualizarProdutoId(EntidadeProduto pro)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_produto SET name_produto = @name_produto, valor_produto = @valor_produto, quantidadeestoque_produto = @quantidadeestoque_produto WHERE id_produto = @id_produto";
+                cmd.Parameters.AddWithValue("@name_produto", pro.name_produto);
+                cmd.Parameters.AddWithValue("@valor_produto", pro.valor_produto);
+                cmd.Parameters.AddWithValue("@quantidadeestoque_produto", pro.quantidadeestoque_produto);
+                cmd.Parameters.AddWithValue("@id_produto", pro.id_produto);
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void ExcluirProdutoId(EntidadeProduto pro)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_produto WHERE id_produto =" + pro.id_produto + "";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterDadosProdutoId(String id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_produto WHERE id_produto =" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Fim funções Produto
+
+        //Inicio Funções Venda
+
+        public static DataTable ObterDadosVendaId(String name)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT valor_produto FROM tb_produto WHERE name_produto = '"+name+"'";
+                //cmd.Parameters.AddWithValue("@name", name);
+                //string res = @"SELECT valor_produto FROM tb_produto WHERE name_produto = '"+name+"'";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                //dt.ToString();
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void PreencherComboBoxProduto(ComboBox comboBox)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT name_produto FROM tb_produto"; // Substitua pelo nome da coluna desejada e o nome da tabela
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Adicione os itens do banco de dados ao ComboBox
+                            comboBox.Items.Add(reader["name_produto"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao preencher o ComboBox: " + ex.Message);
+            }
+            finally
+            {
+                ConexaoBanco().Close();
+            }
+        }
+
+            //Fim Funções Venda
         public static bool verificaUserName(EntidadeUsuario u)
         {
             bool res;
@@ -458,7 +653,7 @@ namespace ProjetoIntegradorFarmacia
 
             var vcon = ConexaoBanco();
             var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT name_user FROM tb_user WHERE'" + u.name_user + "'";
+            cmd.CommandText = "SELECT name_user FROM tb_user WHERE name_user = '" + u.name_user + "'";
             da = new SQLiteDataAdapter(cmd.CommandText, vcon);
             da.Fill(dt);
             if (dt.Rows.Count > 0)

@@ -38,5 +38,11 @@ namespace ProjetoIntegradorFarmacia.Telas
         {
 
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaEditarUsuario telaEditarUsuario = new TelaEditarUsuario();
+            telaEditarUsuario.ShowDialog();
+        }
     }
 }
