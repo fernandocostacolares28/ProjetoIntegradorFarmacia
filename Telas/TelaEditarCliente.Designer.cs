@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DgvCliente);
             this.Controls.Add(this.BtExcluir);

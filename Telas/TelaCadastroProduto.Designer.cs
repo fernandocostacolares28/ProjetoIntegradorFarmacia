@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(684, 165);
             this.Controls.Add(this.BtSalvarProduto);
             this.Controls.Add(this.TbPrecoProduto);

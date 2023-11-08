@@ -57,7 +57,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -126,14 +126,14 @@
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarClienteToolStripMenuItem});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.ClienteToolStripMenuItem_Click);
             // 
             // editarClienteToolStripMenuItem
             // 
             this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
-            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
             this.editarClienteToolStripMenuItem.Click += new System.EventHandler(this.editarClienteToolStripMenuItem_Click);
             // 
@@ -142,7 +142,7 @@
             this.fornecedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarFornecedorToolStripMenuItem});
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.FornecedorToolStripMenuItem_Click);
             // 
@@ -156,7 +156,7 @@
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.ProdutoToolStripMenuItem_Click);
             // 
@@ -165,7 +165,7 @@
             this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarUsuárioToolStripMenuItem});
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.UsuárioToolStripMenuItem_Click);
             // 
@@ -246,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
