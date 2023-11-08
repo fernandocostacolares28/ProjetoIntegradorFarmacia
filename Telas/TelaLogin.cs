@@ -18,6 +18,7 @@ namespace ProjetoIntegradorFarmacia
         {
             InitializeComponent();
             telaInicial = f;
+
         }
 
         private void BtLogar_Click(object sender, EventArgs e)
@@ -47,6 +48,11 @@ namespace ProjetoIntegradorFarmacia
         private void BtCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TelaLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
