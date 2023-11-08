@@ -677,6 +677,7 @@ namespace ProjetoIntegradorFarmacia
             {
                 var vcon = ConexaoBanco();
                 var cmd = vcon.CreateCommand();
+                if(v.quantidade_produto > )
                 cmd.CommandText = "INSERT INTO tb_venda (nomecli, name_produtovenda, valor_venda, quantidade_produto, systemdata) VALUES(@nomecli, @name_produtovenda, @valor_venda, @quantidade_produto, @systemdata)";
                 cmd.Parameters.AddWithValue("@nomecli", v.nomecli);
                 cmd.Parameters.AddWithValue("@name_produtovenda", v.name_produtovenda);
