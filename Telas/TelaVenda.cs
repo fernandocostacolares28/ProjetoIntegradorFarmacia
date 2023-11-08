@@ -51,5 +51,10 @@ namespace ProjetoIntegradorFarmacia
         {
 
         }
+
+        private void TelaVenda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

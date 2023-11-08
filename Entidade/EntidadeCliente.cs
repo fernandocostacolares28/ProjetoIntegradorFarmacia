@@ -10,8 +10,8 @@ namespace ProjetoIntegradorFarmacia.Entidade
     {
         public Int32 id_cliente;
         public string name_cliente;
-        public string cpf_cliente;
-        public string telefone_cliente;
+        public Int64 cpf_cliente;
+        public Int64 telefone_cliente;
         public string endereco_cliente;
     }
 }

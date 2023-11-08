@@ -136,6 +136,7 @@
             // 
             this.TbIdFornecedor.Location = new System.Drawing.Point(75, 26);
             this.TbIdFornecedor.Name = "TbIdFornecedor";
+            this.TbIdFornecedor.ReadOnly = true;
             this.TbIdFornecedor.Size = new System.Drawing.Size(44, 20);
             this.TbIdFornecedor.TabIndex = 11;
             this.TbIdFornecedor.TextChanged += new System.EventHandler(this.TbIdFornecedor_TextChanged);
@@ -146,7 +147,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 425);
+            this.panel1.Location = new System.Drawing.Point(0, 167);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 25);
             this.panel1.TabIndex = 22;
@@ -176,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 192);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtSalvarFornecedor);
             this.Controls.Add(this.label5);
@@ -194,6 +195,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Fornecedor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaCadastroFornecedor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

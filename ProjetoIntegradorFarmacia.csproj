@@ -77,6 +77,12 @@
     <Compile Include="Telas\TelaCadastroUsuario.Designer.cs">
       <DependentUpon>TelaCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\TelaEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaEditarCliente.Designer.cs">
+      <DependentUpon>TelaEditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\TelaCadastroUsuario.resx">
       <DependentUpon>TelaCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaEditarCliente.resx">
+      <DependentUpon>TelaEditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaEditarUsuario.resx">
       <DependentUpon>TelaEditarUsuario.cs</DependentUpon>

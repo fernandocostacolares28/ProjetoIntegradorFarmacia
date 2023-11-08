@@ -41,5 +41,10 @@ namespace ProjetoIntegradorFarmacia
         {
 
         }
+
+        private void TelaCadastroFornecedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

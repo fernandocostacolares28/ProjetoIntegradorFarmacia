@@ -105,6 +105,7 @@
             this.Name = "TelaCadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroUsuario";
+            this.Load += new System.EventHandler(this.TelaCadastroUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

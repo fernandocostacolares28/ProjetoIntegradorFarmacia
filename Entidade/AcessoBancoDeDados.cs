@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using ProjetoIntegradorFarmacia.Telas;
+using ProjetoIntegradorFarmacia.Entidade;
 
 namespace ProjetoIntegradorFarmacia
 {
@@ -16,7 +17,7 @@ namespace ProjetoIntegradorFarmacia
 
         private static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source=C:\\ProjetoIntegrador\\ProjetoIntegradorFarmacia\\banco\\banco_farmacia.db");
+            conexao = new SQLiteConnection("Data Source=C:\\Git\\ProjetoIntegradorFarmacia\\banco\\banco_farmacia.db");
             conexao.Open();
             return conexao;
         }
@@ -178,6 +179,141 @@ namespace ProjetoIntegradorFarmacia
 
 
         ///Fim Gestão usuário
+        // Funções Cliente
+
+        public static void NovoCliente(EntidadeCliente cli)
+        {
+            if (verificaCpfCliente(cli))
+            {
+                MessageBox.Show("Usuário já existe");
+                return;
+            }
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_cliente (name_cliente, cpf_cliente, telefone_cliente, endereco_cliente) VALUES(@name_cliente, @cpf_cliente, @telefone_cliente, @endereco_cliente)";
+                cmd.Parameters.AddWithValue("@name_cliente", cli.name_cliente);
+                cmd.Parameters.AddWithValue("@cpf_cliente", cli.cpf_cliente);
+                cmd.Parameters.AddWithValue("@telefone_cliente", cli.telefone_cliente);
+                cmd.Parameters.AddWithValue("@endereco_cliente", cli.endereco_cliente);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Novo Cliente Cadastrado!!");
+                vcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar novo usuário");
+                throw ex;
+            }
+        }
+        public static bool verificaCpfCliente(EntidadeCliente cli)
+        {
+            bool res;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+
+            var vcon = ConexaoBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT cpf_cliente FROM tb_cliente WHERE cpf_cliente = '" + cli.cpf_cliente + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                res = true;
+                return res;
+            }
+            else
+            {
+                res = false;
+            }
+            vcon.Close();
+            return res;
+        }
+
+        public static DataTable ObterDadosClienteId(String id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_cliente WHERE id_cliente =" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterClienteId()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_cliente as ID, name_cliente as Nome, cpf_cliente as CPF, telefone_cliente as Telefone, endereco_cliente as Endereço FROM tb_cliente";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void AtualizarClienteId(EntidadeCliente cli)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_cliente SET name_cliente = '" + cli.name_cliente + "', telefone_cliente = '" + cli.telefone_cliente + "' , endereco_cliente = '" + cli.endereco_cliente + "' WHERE id_cliente = " + cli.id_cliente;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void ExcluirClienteId(EntidadeCliente cli)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_cliente WHERE id_cliente =" + cli.id_cliente + "";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // fim funções Cliente
         public static bool verificaUserName(EntidadeUsuario u)
         {
             bool res;

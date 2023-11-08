@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.BtCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             this.TbIdCliente.Location = new System.Drawing.Point(69, 30);
             this.TbIdCliente.Name = "TbIdCliente";
+            this.TbIdCliente.ReadOnly = true;
             this.TbIdCliente.Size = new System.Drawing.Size(44, 20);
             this.TbIdCliente.TabIndex = 0;
             this.TbIdCliente.TextChanged += new System.EventHandler(this.TbIdCliente_TextChanged);
@@ -86,6 +88,7 @@
             this.TbCPFCliente.Name = "TbCPFCliente";
             this.TbCPFCliente.Size = new System.Drawing.Size(165, 20);
             this.TbCPFCliente.TabIndex = 4;
+            this.TbCPFCliente.TextChanged += new System.EventHandler(this.TbCPFCliente_TextChanged);
             // 
             // TbTelefoneCliente
             // 
@@ -132,12 +135,13 @@
             // 
             // BtSalvarCliente
             // 
-            this.BtSalvarCliente.Location = new System.Drawing.Point(272, 131);
+            this.BtSalvarCliente.Location = new System.Drawing.Point(272, 105);
             this.BtSalvarCliente.Name = "BtSalvarCliente";
             this.BtSalvarCliente.Size = new System.Drawing.Size(75, 23);
             this.BtSalvarCliente.TabIndex = 10;
             this.BtSalvarCliente.Text = "Salvar";
             this.BtSalvarCliente.UseVisualStyleBackColor = true;
+            this.BtSalvarCliente.Click += new System.EventHandler(this.BtSalvarCliente_Click);
             // 
             // panel1
             // 
@@ -145,7 +149,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 425);
+            this.panel1.Location = new System.Drawing.Point(0, 187);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 25);
             this.panel1.TabIndex = 12;
@@ -170,12 +174,23 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "V 1.0 - 2023";
             // 
+            // BtCancelar
+            // 
+            this.BtCancelar.Location = new System.Drawing.Point(272, 131);
+            this.BtCancelar.Name = "BtCancelar";
+            this.BtCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtCancelar.TabIndex = 13;
+            this.BtCancelar.Text = "Cancelar";
+            this.BtCancelar.UseVisualStyleBackColor = true;
+            this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
+            // 
             // TelaCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 212);
+            this.Controls.Add(this.BtCancelar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtSalvarCliente);
             this.Controls.Add(this.label5);
@@ -192,7 +207,7 @@
             this.Name = "TelaCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaCadastroCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -216,5 +231,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button BtCancelar;
     }
 }

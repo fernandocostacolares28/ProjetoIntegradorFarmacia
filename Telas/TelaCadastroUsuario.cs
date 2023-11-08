@@ -33,5 +33,10 @@ namespace ProjetoIntegradorFarmacia.Telas
             TbUsuario.Clear();
             TbSenha.Clear();
         }
+
+        private void TelaCadastroUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,8 +38,8 @@
             this.BtSalvar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.TbId = new System.Windows.Forms.TextBox();
-            this.DgvUsuario = new System.Windows.Forms.DataGridView();
             this.BtExcluir = new System.Windows.Forms.Button();
+            this.DgvUsuario = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +113,16 @@
             this.TbId.TabIndex = 12;
             this.TbId.TabStop = false;
             // 
+            // BtExcluir
+            // 
+            this.BtExcluir.Location = new System.Drawing.Point(96, 62);
+            this.BtExcluir.Name = "BtExcluir";
+            this.BtExcluir.Size = new System.Drawing.Size(75, 23);
+            this.BtExcluir.TabIndex = 16;
+            this.BtExcluir.Text = "Excluir";
+            this.BtExcluir.UseVisualStyleBackColor = true;
+            this.BtExcluir.Click += new System.EventHandler(this.BtExcluir_Click);
+            // 
             // DgvUsuario
             // 
             this.DgvUsuario.AllowUserToAddRows = false;
@@ -136,16 +146,6 @@
             this.DgvUsuario.TabIndex = 14;
             this.DgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuario_CellContentClick);
             this.DgvUsuario.SelectionChanged += new System.EventHandler(this.DgvUsuario_SelectionChanged);
-            // 
-            // BtExcluir
-            // 
-            this.BtExcluir.Location = new System.Drawing.Point(96, 62);
-            this.BtExcluir.Name = "BtExcluir";
-            this.BtExcluir.Size = new System.Drawing.Size(75, 23);
-            this.BtExcluir.TabIndex = 16;
-            this.BtExcluir.Text = "Excluir";
-            this.BtExcluir.UseVisualStyleBackColor = true;
-            this.BtExcluir.Click += new System.EventHandler(this.BtExcluir_Click);
             // 
             // TelaEditarUsuario
             // 
@@ -184,7 +184,7 @@
         private System.Windows.Forms.Button BtSalvar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TbId;
-        private System.Windows.Forms.DataGridView DgvUsuario;
         private System.Windows.Forms.Button BtExcluir;
+        private System.Windows.Forms.DataGridView DgvUsuario;
     }
 }
