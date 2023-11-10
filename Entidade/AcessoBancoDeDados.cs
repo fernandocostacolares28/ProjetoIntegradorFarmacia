@@ -738,6 +738,130 @@ namespace ProjetoIntegradorFarmacia
         }
 
         //Fim Funções Venda
+
+        //Funções Compra
+
+        public static DataTable ObterDadosCompraId(String name)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT valor_produto FROM tb_produto WHERE name_produto = '" + name + "'";
+                //cmd.Parameters.AddWithValue("@name", name);
+                //string res = @"SELECT valor_produto FROM tb_produto WHERE name_produto = '"+name+"'";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                //dt.ToString();
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public static void PreencherComboBoxFornecedor(ComboBox comboBox)
+        {
+            try
+            {
+                using (var cmd = ConexaoBanco().CreateCommand())
+                {
+                    cmd.CommandText = "SELECT name_fornecedor FROM tb_fornecedor";
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            comboBox.Items.Add(reader["name_fornecedor"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao preencher o ComboBox: " + ex.Message);
+            }
+            finally
+            {
+                ConexaoBanco().Close();
+            }
+        }
+
+        public static void NovaCompra(EntidadeCompra c)
+        {
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "INSERT INTO tb_compra (nomefornecedor, nameproduto_compra, valortotal_compra, quantidade_produto, systemdata) VALUES(@nomefornecedor, @nameproduto_compra, @valortotal_compra, @quantidade_produto, @systemdata)";
+                cmd.Parameters.AddWithValue("@nomefornecedor", c.nomefornecedor);
+                cmd.Parameters.AddWithValue("@nameproduto_compra", c.nameproduto_compra);
+                cmd.Parameters.AddWithValue("@valortotal_compra", c.valortotal_compra);
+                cmd.Parameters.AddWithValue("@quantidade_produto", c.quantidade_produto);
+                cmd.Parameters.AddWithValue("@systemdata", c.systemData);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Nova Compra Realizada!!");
+                vcon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao realizar a Venda!");
+                throw ex;
+            }
+        }
+
+        public static void AtualizarQuantidadeProdutoCompra(Int64 qtd, string pdt)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_produto SET quantidadeestoque_produto = quantidadeestoque_produto + @qtd WHERE name_produto = @pdt";
+                cmd.Parameters.AddWithValue("@qtd", qtd);
+                cmd.Parameters.AddWithValue("@pdt", pdt);
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static DataTable ObterCompraId()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConexaoBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_compra as ID, nomefornecedor as Fornecedor, nameproduto_compra as Produto, valortotal_compra as Valor, quantidade_produto as Quantidade, systemdata as Data FROM tb_compra";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        //Fim Funções Compra
         public static bool verificaUserName(EntidadeUsuario u)
         {
             bool res;

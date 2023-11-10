@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaCompra));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.LbxFornecedor = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TbValorTotalVenda = new System.Windows.Forms.TextBox();
+            this.TbValorTotalCompra = new System.Windows.Forms.TextBox();
             this.BtComprar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TbQuantidadeVenda = new System.Windows.Forms.TextBox();
+            this.TbQuantidadeCompra = new System.Windows.Forms.TextBox();
             this.TbValorProduto = new System.Windows.Forms.TextBox();
-            this.TbNomeProduto = new System.Windows.Forms.TextBox();
+            this.CbFornecedor = new System.Windows.Forms.ComboBox();
+            this.CbProduto = new System.Windows.Forms.ComboBox();
+            this.DgvCompra = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,52 +83,43 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(487, 65);
+            this.label7.Location = new System.Drawing.Point(454, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 24;
             this.label7.Text = "Fornecedor";
             // 
-            // LbxFornecedor
-            // 
-            this.LbxFornecedor.FormattingEnabled = true;
-            this.LbxFornecedor.Location = new System.Drawing.Point(551, 61);
-            this.LbxFornecedor.Name = "LbxFornecedor";
-            this.LbxFornecedor.Size = new System.Drawing.Size(166, 17);
-            this.LbxFornecedor.TabIndex = 23;
-            this.LbxFornecedor.SelectedIndexChanged += new System.EventHandler(this.LbxFornecedor_SelectedIndexChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(487, 132);
+            this.label4.Location = new System.Drawing.Point(454, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "Valor Total";
             // 
-            // TbValorTotalVenda
+            // TbValorTotalCompra
             // 
-            this.TbValorTotalVenda.Location = new System.Drawing.Point(551, 129);
-            this.TbValorTotalVenda.Name = "TbValorTotalVenda";
-            this.TbValorTotalVenda.Size = new System.Drawing.Size(166, 20);
-            this.TbValorTotalVenda.TabIndex = 20;
-            this.TbValorTotalVenda.TextChanged += new System.EventHandler(this.TbValorTotalVenda_TextChanged);
+            this.TbValorTotalCompra.Location = new System.Drawing.Point(518, 104);
+            this.TbValorTotalCompra.Name = "TbValorTotalCompra";
+            this.TbValorTotalCompra.Size = new System.Drawing.Size(166, 20);
+            this.TbValorTotalCompra.TabIndex = 20;
+            this.TbValorTotalCompra.TextChanged += new System.EventHandler(this.TbValorTotalVenda_TextChanged);
             // 
             // BtComprar
             // 
-            this.BtComprar.Location = new System.Drawing.Point(145, 155);
+            this.BtComprar.Location = new System.Drawing.Point(112, 130);
             this.BtComprar.Name = "BtComprar";
             this.BtComprar.Size = new System.Drawing.Size(75, 23);
             this.BtComprar.TabIndex = 19;
-            this.BtComprar.Text = "Vender";
+            this.BtComprar.Text = "Comprar";
             this.BtComprar.UseVisualStyleBackColor = true;
             this.BtComprar.Click += new System.EventHandler(this.BtComprar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 132);
+            this.label3.Location = new System.Drawing.Point(22, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 18;
@@ -134,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 90);
+            this.label5.Location = new System.Drawing.Point(22, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 17;
@@ -143,35 +137,69 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 45);
+            this.label6.Location = new System.Drawing.Point(22, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Nome Produto";
             // 
-            // TbQuantidadeVenda
+            // TbQuantidadeCompra
             // 
-            this.TbQuantidadeVenda.Location = new System.Drawing.Point(145, 129);
-            this.TbQuantidadeVenda.Name = "TbQuantidadeVenda";
-            this.TbQuantidadeVenda.Size = new System.Drawing.Size(179, 20);
-            this.TbQuantidadeVenda.TabIndex = 15;
-            this.TbQuantidadeVenda.TextChanged += new System.EventHandler(this.TbQuantidadeVenda_TextChanged);
+            this.TbQuantidadeCompra.Location = new System.Drawing.Point(112, 104);
+            this.TbQuantidadeCompra.Name = "TbQuantidadeCompra";
+            this.TbQuantidadeCompra.Size = new System.Drawing.Size(179, 20);
+            this.TbQuantidadeCompra.TabIndex = 15;
+            this.TbQuantidadeCompra.TextChanged += new System.EventHandler(this.TbQuantidadeVenda_TextChanged);
             // 
             // TbValorProduto
             // 
-            this.TbValorProduto.Location = new System.Drawing.Point(145, 83);
+            this.TbValorProduto.Location = new System.Drawing.Point(112, 58);
             this.TbValorProduto.Name = "TbValorProduto";
             this.TbValorProduto.Size = new System.Drawing.Size(179, 20);
             this.TbValorProduto.TabIndex = 14;
             this.TbValorProduto.TextChanged += new System.EventHandler(this.TbValorProduto_TextChanged);
             // 
-            // TbNomeProduto
+            // CbFornecedor
             // 
-            this.TbNomeProduto.Location = new System.Drawing.Point(145, 45);
-            this.TbNomeProduto.Name = "TbNomeProduto";
-            this.TbNomeProduto.Size = new System.Drawing.Size(179, 20);
-            this.TbNomeProduto.TabIndex = 13;
-            this.TbNomeProduto.TextChanged += new System.EventHandler(this.TbNomeProduto_TextChanged);
+            this.CbFornecedor.FormattingEnabled = true;
+            this.CbFornecedor.Location = new System.Drawing.Point(518, 40);
+            this.CbFornecedor.Name = "CbFornecedor";
+            this.CbFornecedor.Size = new System.Drawing.Size(192, 21);
+            this.CbFornecedor.TabIndex = 26;
+            this.CbFornecedor.SelectedIndexChanged += new System.EventHandler(this.CbFornecedor_SelectedIndexChanged);
+            // 
+            // CbProduto
+            // 
+            this.CbProduto.FormattingEnabled = true;
+            this.CbProduto.Location = new System.Drawing.Point(112, 20);
+            this.CbProduto.Name = "CbProduto";
+            this.CbProduto.Size = new System.Drawing.Size(192, 21);
+            this.CbProduto.TabIndex = 25;
+            this.CbProduto.SelectedIndexChanged += new System.EventHandler(this.CbProduto_SelectedIndexChanged);
+            this.CbProduto.TextChanged += new System.EventHandler(this.CbProduto_TextChanged);
+            // 
+            // DgvCompra
+            // 
+            this.DgvCompra.AllowUserToAddRows = false;
+            this.DgvCompra.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCompra.Location = new System.Drawing.Point(12, 175);
+            this.DgvCompra.MultiSelect = false;
+            this.DgvCompra.Name = "DgvCompra";
+            this.DgvCompra.ReadOnly = true;
+            this.DgvCompra.RowHeadersVisible = false;
+            this.DgvCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvCompra.Size = new System.Drawing.Size(776, 244);
+            this.DgvCompra.TabIndex = 27;
+            this.DgvCompra.SelectionChanged += new System.EventHandler(this.DgvCompra_SelectionChanged);
             // 
             // TelaCompra
             // 
@@ -179,25 +207,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DgvCompra);
+            this.Controls.Add(this.CbFornecedor);
+            this.Controls.Add(this.CbProduto);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.LbxFornecedor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TbValorTotalVenda);
+            this.Controls.Add(this.TbValorTotalCompra);
             this.Controls.Add(this.BtComprar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.TbQuantidadeVenda);
+            this.Controls.Add(this.TbQuantidadeCompra);
             this.Controls.Add(this.TbValorProduto);
-            this.Controls.Add(this.TbNomeProduto);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compra";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaCompra_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,15 +239,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox LbxFornecedor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TbValorTotalVenda;
+        private System.Windows.Forms.TextBox TbValorTotalCompra;
         private System.Windows.Forms.Button BtComprar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TbQuantidadeVenda;
+        private System.Windows.Forms.TextBox TbQuantidadeCompra;
         private System.Windows.Forms.TextBox TbValorProduto;
-        private System.Windows.Forms.TextBox TbNomeProduto;
+        private System.Windows.Forms.ComboBox CbFornecedor;
+        private System.Windows.Forms.ComboBox CbProduto;
+        private System.Windows.Forms.DataGridView DgvCompra;
     }
 }

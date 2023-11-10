@@ -258,7 +258,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farma+Saude";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

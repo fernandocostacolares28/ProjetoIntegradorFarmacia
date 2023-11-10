@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Entidade\AcessoBancoDeDados.cs" />
     <Compile Include="Entidade\EntidadeCliente.cs" />
+    <Compile Include="Entidade\EntidadeCompra.cs" />
     <Compile Include="Entidade\EntidadeFornecedor.cs" />
     <Compile Include="Entidade\EntidadeProduto.cs" />
     <Compile Include="Entidade\Globais.cs" />
