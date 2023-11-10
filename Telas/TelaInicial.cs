@@ -100,5 +100,17 @@ namespace ProjetoIntegradorFarmacia
             TelaEditarFornecedor telaEditarFornecedor = new TelaEditarFornecedor();
             telaEditarFornecedor.ShowDialog();
         }
+
+        private void compraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TelaRelatórioCompra telaRelatórioCompra = new TelaRelatórioCompra();
+            telaRelatórioCompra.ShowDialog();
+        }
+
+        private void vendaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TelaRelatorioVenda telaRelatorioVenda = new TelaRelatorioVenda();
+            telaRelatorioVenda.ShowDialog();
+        }
     }
 }

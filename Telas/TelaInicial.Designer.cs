@@ -233,14 +233,16 @@
             // vendaToolStripMenuItem1
             // 
             this.vendaToolStripMenuItem1.Name = "vendaToolStripMenuItem1";
-            this.vendaToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.vendaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.vendaToolStripMenuItem1.Text = "Venda";
+            this.vendaToolStripMenuItem1.Click += new System.EventHandler(this.vendaToolStripMenuItem1_Click);
             // 
             // compraToolStripMenuItem1
             // 
             this.compraToolStripMenuItem1.Name = "compraToolStripMenuItem1";
-            this.compraToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
+            this.compraToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.compraToolStripMenuItem1.Text = "Compra";
+            this.compraToolStripMenuItem1.Click += new System.EventHandler(this.compraToolStripMenuItem1_Click);
             // 
             // TelaInicial
             // 

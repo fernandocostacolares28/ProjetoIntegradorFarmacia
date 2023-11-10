@@ -8,6 +8,10 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using ProjetoIntegradorFarmacia.Telas;
 using ProjetoIntegradorFarmacia.Entidade;
+using System.Data.SqlClient;
+
+
+
 
 namespace ProjetoIntegradorFarmacia
 {
@@ -858,7 +862,16 @@ namespace ProjetoIntegradorFarmacia
                 throw ex;
             }
         }
+        //Relatórios
 
+        public static void GerarRelatorioVenda()
+        {
+
+
+        }
+
+
+        //fim Relatórios
 
 
         //Fim Funções Compra
