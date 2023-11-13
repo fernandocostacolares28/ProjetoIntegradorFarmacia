@@ -82,5 +82,10 @@ namespace ProjetoIntegradorFarmacia
                 TbQtdProduto.Text = dt.Rows[0].Field<Int64>("quantidadeestoque_produto").ToString();
             }
         }
+
+        private void DgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

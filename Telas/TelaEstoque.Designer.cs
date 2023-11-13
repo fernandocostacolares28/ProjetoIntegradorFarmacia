@@ -196,6 +196,7 @@
             this.DgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvEstoque.Size = new System.Drawing.Size(782, 256);
             this.DgvEstoque.TabIndex = 41;
+            this.DgvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEstoque_CellContentClick);
             this.DgvEstoque.SelectionChanged += new System.EventHandler(this.DgvEstoque_SelectionChanged);
             // 
             // TelaEstoque
